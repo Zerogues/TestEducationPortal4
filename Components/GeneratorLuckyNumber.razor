@@ -3,15 +3,19 @@
 
 <hr/>
 
-<div class="test-success h3">Title</div>
+<div class="test-success h3">@Title</div>
 
 <button @onlick="GenerateNumber" class="btn btn-dark">Generate Lucky Number</button>
 
 @if (LuckyNumber > 0)
 {
-	<p class="P-2">LuckyNumber - @LuckyNumber</p>
+	<p class="p-2">Lucky Number - @LuckyNumber</p>
 }
+
 @code {
+	[Parameter]
+	public string Title { get; set; } = string.Empty;
+
 	public int LuckyNumber { get; set; } = 0;
 
 	private void GenerateNumber()
