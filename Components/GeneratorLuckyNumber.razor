@@ -5,7 +5,7 @@
 
 <div class="test-success h3">@Title</div>
 
-<button @onсlick="GenerateNumber" class="btn btn-dark">Generate Lucky Number</button>
+<button @onclick="GenerateNumber" class="btn btn-dark">Generate Lucky Number</button>
 
 @if (LuckyNumber > 0)
 {
@@ -17,7 +17,7 @@
 	public string Title { get; set; } = string.Empty;
 
 	public int LuckyNumber { get; set; } = 0;
-
+	
 	private void GenerateNumber()
 	{
 		Random rnd = new();
