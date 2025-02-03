@@ -8,5 +8,9 @@
 
     @(await Html.RenderComponentAsync
     <TestEducationPortal4.Components.GeneratorLuckyNumber>(RenderMode.ServerPrerendered,
-        new {Title="Lucky Number Generator"}))
+        new {Title="Генератор счастливых чисел"}))
+
+    <hr />
+	@(await Html.RenderComponentAsync
+    <TestEducationPortal4.Components.Rating>(RenderMode.ServerPrerendered))
 </div>

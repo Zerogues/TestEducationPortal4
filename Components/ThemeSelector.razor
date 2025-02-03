@@ -1,0 +1,24 @@
+﻿<FluentDesignTheme @bind-Mode="@Mode"
+StorageName="theme" />
+
+<FluentNavMenu >
+    <FluentSwitch Label="Theme"
+    @bind-Value=valueMode
+    CheckedMessage="On" 
+    UncheckedMessage="Off"/>
+</FluentNavMenu>
+
+@if (valueMode)
+{
+    Mode = DesignThemeModes.Light;
+}
+else if (!valueMode)
+{
+    Mode = DesignThemeModes.Dark;
+}
+
+@code {
+	bool valueMode = false;
+	
+    public DesignThemeModes Mode { get; set; }
+}

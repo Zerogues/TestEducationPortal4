@@ -1,3 +1,5 @@
+using Microsoft.FluentUI.AspNetCore.Components;
+
 namespace TestEducationPortal4
 {
     public class Program
@@ -9,6 +11,7 @@ namespace TestEducationPortal4
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddServerSideBlazor();
+            builder.Services.AddFluentUIComponents();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

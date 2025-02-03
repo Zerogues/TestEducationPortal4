@@ -25,9 +25,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @(await Html.RenderComponentAsync
+                            <TestEducationPortal4.Components.ThemeSelector>(RenderMode.ServerPrerendered))
                     </ul>
                 </div>
-            </div>
+            </div>        
         </nav>
     </header>
     <div class="container">
@@ -45,6 +47,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="_framework/blazor.server.js"></script>
+    <script src="_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js" type="module" async></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

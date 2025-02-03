@@ -1,0 +1,25 @@
+﻿<FluentStack VerticalAlignment="VerticalAlignment.Center" Style="margin-left: 320px;">
+    <FluentRating Max="5"
+                  Label="Выберите оценку!"
+                  @bind-Value="@SelectedValue"
+                  OnHoverValueChanged="@(i => HoverValue = i)"
+                  AllowReset="true" />
+    <FluentLabel>@LabelText</FluentLabel>
+</FluentStack>
+
+<FluentButton OnClick="@((e) => SelectedValue = 0)" Appearance="Appearance.Lightweight">Удалить оценку</FluentButton>
+
+@code {
+    int SelectedValue = 0;
+    int? HoverValue = null;
+
+    private string LabelText => (HoverValue ?? SelectedValue) switch
+    {
+        1 => "Очень плохо ;(",
+        2 => "Плохо :(",
+        3 => "Удовлетворительно :|",
+        4 => "Хорошо! :)",
+        5 => "Отлично! :D",
+        _ => "Оцените работу генератора."
+    };
+}
